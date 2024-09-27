@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <h2>Agregar productos a la lista de compras</h2>
+    <form action="ejercicio8.php" method="post">
+        <label for="producto">Producto:</label>
+        <input type="text" name="producto" id="producto" required>
+        <input type="submit" value="Agregar a la lista">
+        <input type="hidden" name="productos_anteriores" value="<?php echo isset($_POST['productos_anteriores']) ? htmlspecialchars($_POST['productos_anteriores']) : ''; ?>">
+    </form>
+    <form action="ejercicio8.php" method="post">
+        <input type="hidden" name="finalizar" value="true">
+        <input type="hidden" name="productos_anteriores" value="<?php echo isset($_POST['productos_anteriores']) ? htmlspecialchars($_POST['productos_anteriores']) : ''; ?>">
+        <input type="submit" value="Finalizar">
+    </form>
+</body>
+</html>
